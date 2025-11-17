@@ -1,0 +1,192 @@
+/*  PALETA DE COLORES UTP  */
+:root {
+  --color-utp-red: #b7002c;
+  --color-utp-red-dark: #8f0023;
+  --color-utp-dark: #000000;
+  --color-light-bg: #f4f4f4;
+  --color-text: #212529;
+}
+
+/*  RESET GENERAL  */
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--color-light-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+/*  NAVBAR  */
+.navbar {
+  background-color: var(--color-utp-dark) !important;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar-brand span {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-left: 6px;
+}
+
+/*  HERO DEL INDEX  */
+.hero {
+  background: linear-gradient(180deg, var(--color-utp-red), var(--color-utp-red-dark));
+  padding: 5rem 1rem;
+  color: #fff;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.hero .animate-fade { animation: fadeInUp 0.9s ease both; }
+.hero .animate-slide { animation: slideIn 1s ease both; }
+.hero .animate-zoom { animation: zoomIn 0.8s ease both; }
+
+/*  TARJETAS  */
+.producto-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.25s ease;
+  border: 1px solid #e6e6e6;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.13);
+}
+
+.producto-card .card-body h5 {
+  font-weight: 600;
+  color: #000;
+}
+
+.producto-card .card-body small {
+  color: var(--color-utp-red) !important;
+}
+
+/*  IMÁGENES DEL CATÁLOGO  */
+
+.producto-img {
+  width: 100%;
+  height: auto !important;
+  max-height: 260px;
+  object-fit: contain !important;
+  background: #ffffff;
+  padding: 8px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+/*  BOTONES  */
+
+/* — BOTÓN PRINCIPAL (INDEX) — */
+.btn-primary {
+  background-color: #212529 !important;
+  border-color: #212529 !important;
+  padding: 0.75rem 2rem !important;
+  font-weight: 600;
+  border-radius: 8px;
+}
+.btn-primary:hover {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+/* — BOTÓN OUTLINE GENERAL — */
+.btn-outline-primary {
+  color: #212529 !important;
+  border-color: #212529 !important;
+  font-weight: 600;
+  border-radius: 8px;
+}
+.btn-outline-primary:hover {
+  background: var(--color-utp-red);
+  color: white !important;
+}
+
+/* — BOTÓN VER (CATÁLOGO) — */
+.producto-card .btn-outline-primary {
+  padding: 0.55rem 1.4rem !important;
+  font-weight: 600;
+  border-radius: 8px;
+}
+.producto-card .btn-outline-primary:hover {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* — BOTÓN AÑADIR (ROJO) — */
+.producto-card .btn-primary {
+  background-color: var(--color-utp-red) !important;
+  border-color: var(--color-utp-red) !important;
+  padding: 0.55rem 1.4rem !important;
+  border-radius: 8px;
+}
+.producto-card .btn-primary:hover {
+  background-color: var(--color-utp-red-dark) !important;
+}
+
+/* — BOTÓN "VACIAR" (NEGRO) — */
+.btn-vaciar {
+  background-color: #212529 !important;
+  border-color: #212529 !important;
+  color: #ffffff !important;
+}
+.btn-vaciar:hover {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+/* — BOTÓN "SIMULAR COMPRA" (ROJO) — */
+.btn-comprar {
+  background-color: var(--color-utp-red) !important;
+  border-color: var(--color-utp-red) !important;
+  color: #ffffff !important;
+}
+.btn-comprar:hover {
+  background-color: var(--color-utp-red-dark) !important;
+  border-color: var(--color-utp-red-dark) !important;
+}
+
+/*  TOAST FEEDBACK  */
+.toast-feedback {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: var(--color-utp-red);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  z-index: 9999;
+  transition: 0.28s ease;
+}
+.toast-feedback.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*  ANIMACIONES  */
+@keyframes fadeInUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes slideIn {
+  from { opacity:0; transform:translateX(-30px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes zoomIn {
+  from { opacity:0; transform:scale(0.92); }
+  to   { opacity:1; transform:scale(1); }
+}
+
+/*  RESPONSIVE  */
+@media(max-width:768px){
+  .producto-img {
+    max-height: 180px;
+  }
+}
